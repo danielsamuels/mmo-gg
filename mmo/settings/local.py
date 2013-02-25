@@ -1,0 +1,2 @@
+PREPEND_WWW = False
+DEBUG = True

@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load characters %}
+
+{% block content %}
+<div class="row">
+    {% sidebar %}
+    <div class="span9">
+        {% if not characters %}
+        <div class="hero-unit">
+            <h1>Lets get going!</h1>
+            <p>You do not currently have any characters, so you can't enter the world - lets change that!</p>
+            <p><a href="{% url character:create %}" class="btn btn-primary btn-large">Make your first character &raquo;</a></p>
+        </div>
+        {% endif %}
+    </div><!--/span-->
+</div><!--/row-->
+{% endblock %}

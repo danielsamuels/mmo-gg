@@ -1,0 +1,24 @@
+<div class="span3">
+    <div class="well sidebar-nav">
+        <ul class="nav nav-list">
+            <li class="nav-header">Your characters</li>
+            {% if characters %}
+
+                {% for character in characters %}
+                    <li>
+                        <a href="{% url character:view character.pk %}"><span class="label">{{ character.level }}</span> {{ character }}</a>
+                    </li>
+                {% endfor %}
+                <li><a href="{% url character:create %}">Create a new character</a>
+            {% else %}
+                <li>You do not currently have any characters.</li>
+            {% endif %}
+            {% if friends %}
+            <li class="nav-header">Your friend's characters</li>
+            <li>
+                <a href="#"><span class="label">5</span> Dickhead (James Garner)</a>
+            </li>
+            {% endif %}
+        </ul>
+    </div><!--/.well -->
+</div><!--/span-->

@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+<form class="form-signin" method="post">
+  {% csrf_token %}
+  <h2 class="form-signin-heading">Register</h2>
+
+  {{ form.username.errors }}
+  <input name="username" type="text" class="input-block-level" placeholder="Username" value="{% if form.username.value %}{{ form.username.value }}{% endif %}">
+
+  {{ form.password1.errors }}
+  <input name="password1" type="password" class="input-block-level" placeholder="Password">
+
+  {{ form.password2.errors }}
+  <input name="password2" type="password" class="input-block-level" placeholder="Password (again)">
+
+  <button class="btn btn-large btn-primary" type="submit">Sign in</button>
+</form>
+{% endblock %}

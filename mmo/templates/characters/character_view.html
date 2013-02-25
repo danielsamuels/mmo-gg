@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load characters %}
+
+{% block content %}
+<div class="row">
+    {% sidebar %}
+    <div class="span9">
+        <div class="hero-unit">
+            <h1>{{ character }}</h1>
+            <h4>Level {{ character.level }} {{ character.type }}</h4>
+            {% if current_user %}
+            <p><a href="{% url character:play id=character.pk %}" class="btn btn-primary btn-large">Play this character &raquo;</a></p>
+            {% endif %}
+        </div>
+    </div><!--/span-->
+</div><!--/row-->
+{% endblock %}

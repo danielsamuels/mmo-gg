@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load characters %}
+
+{% block content %}
+<div class="row">
+    {% sidebar %}
+    <div class="span9">
+        <h1>{{ character }}</h1>
+
+        {# Combat system #}
+    </div><!--/span-->
+</div><!--/row-->
+
+<script src="https://raw.github.com/mrdoob/three.js/master/build/three.js"></script>
+<script src="/static/js/3d.js"></script>
+{% endblock %}

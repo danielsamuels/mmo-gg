@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% load placeholder %}
+
+{% block content %}
+<form method="post" class="form-signin">
+    {% csrf_token %}
+    {{ form.errors }}
+    {{ form.name|placeholder:"Character name" }}
+    {{ form.type }}
+    <input class="btn btn-large btn-primary" type="submit" value="Create">
+</form>
+{% endblock %}
